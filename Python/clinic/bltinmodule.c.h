@@ -1125,6 +1125,23 @@ PyDoc_STRVAR(builtin_sum__doc__,
 #define BUILTIN_SUM_METHODDEF    \
     {"sum", _PyCFunction_CAST(builtin_sum), METH_FASTCALL|METH_KEYWORDS, builtin_sum__doc__},
 
+
+PyDoc_STRVAR(builtin_somma__doc__,
+"somma($module, iterable, /, start=0)\n"
+"--\n"
+"\n"
+"Restituisce la somma di un valore \'start\' (predefinito: 0) più un iterabile di numeri\n"
+"\n"
+"Quando l'iterabile è vuoto, restituisce il valore di start.\n"
+"Questa funzione è pensata specificamente per l'uso con valori numerici e può\n"
+"rifiutare tipi non numerici.");
+
+
+#define BUILTIN_SOMMA_METHODDEF    \
+    {"somma", _PyCFunction_CAST(builtin_sum), METH_FASTCALL|METH_KEYWORDS, builtin_somma__doc__},
+
+
+
 static PyObject *
 builtin_sum_impl(PyObject *module, PyObject *iterable, PyObject *start);
 
