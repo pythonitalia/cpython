@@ -900,6 +900,25 @@ PyDoc_STRVAR(builtin_print__doc__,
 #define BUILTIN_PRINT_METHODDEF    \
     {"print", _PyCFunction_CAST(builtin_print), METH_FASTCALL|METH_KEYWORDS, builtin_print__doc__},
 
+
+PyDoc_STRVAR(builtin_stampa__doc__,
+"stampa($module, /, *args, sep=\' \', end=\'\\n\', file=None, flush=False)\n"
+"--\n"
+"\n"
+"Stampa i valori su un flusso, o su sys.stdout per impostazione predefinita.\n"
+"\n"
+"  sep\n"
+"    stringa inserita tra i valori, predefinito uno spazio.\n"
+"  end\n"
+"    stringa aggiunta dopo l'ultimo valore, predefinito una nuova riga.\n"
+"  file\n"
+"    un oggetto simile a un file (flusso); predefinito al sys.stdout corrente.\n"
+"  flush\n"
+"    se svuotare forzatamente il flusso.");
+
+#define BUILTIN_STAMPA_METHODDEF    \
+    {"stampa", _PyCFunction_CAST(builtin_print), METH_FASTCALL|METH_KEYWORDS, builtin_stampa__doc__},
+
 static PyObject *
 builtin_print_impl(PyObject *module, PyObject *args, PyObject *sep,
                    PyObject *end, PyObject *file, int flush);
