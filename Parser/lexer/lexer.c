@@ -335,6 +335,7 @@ verify_identifier(struct tok_state *tok)
         return 0;
     }
     assert(PyUnicode_GET_LENGTH(s) > 0);
+
     if (invalid < PyUnicode_GET_LENGTH(s)) {
         Py_UCS4 ch = PyUnicode_READ_CHAR(s, invalid);
         if (invalid + 1 < PyUnicode_GET_LENGTH(s)) {
@@ -629,6 +630,14 @@ tok_get_normal_mode(struct tok_state *tok, tokenizer_mode* current_tok, struct t
             tok->comment_newline = blankline;
             return MAKE_TOKEN(COMMENT);
         }
+    }
+
+
+    if (c == 240 ){
+        c = tok_nextc(tok);
+        c = tok_nextc(tok);
+        c = tok_nextc(tok);
+        c = 107; // Replace with letter k
     }
 
     if (tok->done == E_INTERACT_STOP) {
