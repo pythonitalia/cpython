@@ -631,7 +631,7 @@ tok_get_normal_mode(struct tok_state *tok, tokenizer_mode* current_tok, struct t
         }
     }
 
-
+     // 240 is the decimal first byte of the UTF-8 encoding for "🤌"
     if (c == 240 ){
         c = tok_nextc(tok);
         c = tok_nextc(tok);
